@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hello-world-container
-        image: msrinivascharan/docker-hello-world-spring-boot:v1
+        image: {{ .Values.app.image }}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

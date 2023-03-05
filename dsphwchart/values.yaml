@@ -1,0 +1,2 @@
+app:
+  image: msrinivascharan/docker-hello-world-spring-boot
