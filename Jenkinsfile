@@ -10,22 +10,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                bat 'git clone https://github.com/msrinivascharan/docker-hello-world-spring-boot.git', branch: 'main'
+                bat(script: 'git clone https://github.com/msrinivascharan/docker-hello-world-spring-boot.git', branch: 'main')
             }
         }
         stage('Build') {
             steps {
-                bat 'mvn clean'
+                bat(script: 'mvn clean')
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat(script: 'mvn test')
             }
         }
         stage('Deploy') {
             steps {
-                bat 'mvn package'
+                bat(script: 'mvn package')
             }
         }
     }
