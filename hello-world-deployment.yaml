@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+spec:
+  selector:
+    matchLabels:
+      app: hello-world
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-world-container
+        image: msrinivascharan/docker-hello-world-spring-boot:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
