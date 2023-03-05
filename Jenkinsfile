@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                bat(script: 'git clone https://github.com/msrinivascharan/docker-hello-world-spring-boot.git', branch: 'main')
+                bat(script: 'git branch: 'main', url: 'https://github.com/msrinivascharan/docker-hello-world-spring-boot.git')
             }
         }
         stage('Build') {
