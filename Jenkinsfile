@@ -13,19 +13,25 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/msrinivascharan/docker-hello-world-spring-boot.git'
             }
         }
-        stage('Build') {
+        stage('Build app') {
             steps {
                 bat(script: 'mvn clean')
             }
         }
-        stage('Test') {
+        stage('Unit test app') {
             steps {
                 bat(script: 'mvn test')
             }
         }
-        stage('Deploy') {
+        stage('Package app') {
             steps {
                 bat(script: 'mvn package')
+            }
+        }
+
+        stage('Docker image app') {
+            steps {
+                docker build -t msrinivascharan/docker-hello-world-spring-boot:$env:BUILD_ID .
             }
         }
     }
