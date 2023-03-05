@@ -31,7 +31,7 @@ pipeline {
 
         stage('Docker image app') {
             steps {
-                'docker build -t msrinivascharan/docker-hello-world-spring-boot:$env:BUILD_ID .'
+                bat(script: 'docker build -t msrinivascharan/docker-hello-world-spring-boot:$env:BUILD_ID .')
             }
         }
     }
