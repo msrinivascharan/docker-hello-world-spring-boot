@@ -43,7 +43,7 @@ pipeline {
 
         stage('Deploy app to K8s cluster') {
             steps {
-                powershell "helm upgrade docker-springboot-hw-app  ./dsphwchart --set app.image=msrinivascharan/docker-hello-world-spring-boot:${BUILD_NUMBER}"
+                powershell "helm --install upgrade docker-springboot-hw-app  ./dsphwchart --set app.image=msrinivascharan/docker-hello-world-spring-boot:${BUILD_NUMBER}"
             }
         }
     }
